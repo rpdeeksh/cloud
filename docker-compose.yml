@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  calculator:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: calculator-app
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONPATH=/app
+    command: python calculator.py
+
+  calculator-test:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: calculator-test
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONPATH=/app
+    command: python -m pytest test_calculator.py -v
+    profiles:
+      - test
