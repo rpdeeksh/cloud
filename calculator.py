@@ -12,3 +12,4 @@ def multiply(a: int, b: int) -> int:
 if __name__ == "__main__":
     print("2 + 3 =", add(2, 3))
     print("5 - 2 =", subtract(5, 2))
+    print("3 * 4 =", multiply(3, 4))
